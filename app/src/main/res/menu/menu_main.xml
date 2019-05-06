@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item android:id="@+id/restart"
+            android:title="@string/restart"
+            app:showAsAction="never" />
+        <item android:id="@+id/new_game"
+            android:title="@string/newgame"
+            app:showAsAction="never" >
+
+        <menu>
+                <item android:id="@+id/easy"
+                    android:title="@string/difficulty_easy"
+                    app:showAsAction="never" />
+                <item android:id="@+id/medium"
+                    android:title="@string/difficulty_medium"
+                    app:showAsAction="never" />
+                <item android:id="@+id/hard"
+                    android:title="@string/difficulty_hard"
+                    app:showAsAction="never" />
+
+        </menu>
+        </item>
+
+
+
+</menu>
+

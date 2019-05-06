@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Color Sudoku</string>
+    <string name="action_settings">Settings</string>
+    <string name="b1">Button</string>
+
+    <!-- localization of default folder names -->
+    <string name="difficulty_hard">Hard</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="save">Save</string>
+    <string name="numpad">Numpad</string>
+    <string name="numpad_abbr">Num\\nPad</string>
+    <string name="that_is_all">that_is_all</string>
+    <string name="im_disable_modes_hint">Please remember that you don\\\'t have to use all input modes. You can disable \t\tany of them in the game settings.\\n\\nYou can also use the keyboard and trackball to control the game. If you \t\twant to enter notes using keyboard, press number with alt or shift.\\n</string>
+    <string name="im_numpad_hint">no hint here!</string>
+    <string name="restart">Restart</string>
+    <string name="newgame">New Game</string>
+    <string name="well_done">Well Done!</string>
+    <string name="congrats">Congratulations, you have solved the puzzle in %s.</string>
+    <string name="restart_confirm">Restart?</string>
+    <string name="menu">Menu</string>
+    <string name="undo">undo</string>
+    <string name="clear_all_notes">asda</string>
+</resources>
