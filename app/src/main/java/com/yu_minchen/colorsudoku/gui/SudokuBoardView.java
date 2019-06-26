@@ -61,6 +61,7 @@ public class SudokuBoardView extends View {
     private Paint mBackgroundColorSelected;
     private Paint mBackgroundColorHighlighted;
     private Paint num1Color, num2Color, num3Color, num4Color, num5Color, num6Color, num7Color, num8Color, num9Color, num0Color;
+    private boolean isNumberShowed = false;
 
     private Paint mCellValueInvalidPaint;
 
@@ -115,15 +116,15 @@ public class SudokuBoardView extends View {
         setBackgroundColorTouched(a.getColor(R.styleable.SudokuBoardView_backgroundColorTouched, Color.rgb(50, 50, 255)));
         setBackgroundColorSelected(a.getColor(R.styleable.SudokuBoardView_backgroundColorSelected, Color.YELLOW));
         setBackgroundColorHighlighted(a.getColor(R.styleable.SudokuBoardView_backgroundColorHighlighted, Color.GREEN));
-        setNum1Color(a.getColor(R.styleable.SudokuBoardView_num1, Color.parseColor("#09ff00")));
-        setNum2Color(a.getColor(R.styleable.SudokuBoardView_num2, Color.parseColor("#e3ff00")));
-        setNum3Color(a.getColor(R.styleable.SudokuBoardView_num3,Color.parseColor("#ffca07")));
-        setNum4Color(a.getColor(R.styleable.SudokuBoardView_num4, Color.parseColor("#e87d0c")));
-        setNum5Color(a.getColor(R.styleable.SudokuBoardView_num5, Color.parseColor("#ff0082")));
-        setNum6Color(a.getColor(R.styleable.SudokuBoardView_num6, Color.parseColor("#9900ff")));
-        setNum7Color(a.getColor(R.styleable.SudokuBoardView_num7, Color.parseColor("#0114ff")));
-        setNum8Color(a.getColor(R.styleable.SudokuBoardView_num8, Color.parseColor("#0ca8e8")));
-        setNum9Color(a.getColor(R.styleable.SudokuBoardView_num9, Color.parseColor("#00ff9d")));
+        setNum1Color(a.getColor(R.styleable.SudokuBoardView_num1, Color.parseColor("#d98880")));
+        setNum2Color(a.getColor(R.styleable.SudokuBoardView_num2, Color.parseColor("#e8124c")));
+        setNum3Color(a.getColor(R.styleable.SudokuBoardView_num3, Color.parseColor("#f39c12")));
+        setNum4Color(a.getColor(R.styleable.SudokuBoardView_num4, Color.parseColor("#f4d03f")));
+        setNum5Color(a.getColor(R.styleable.SudokuBoardView_num5, Color.parseColor("#008000")));
+        setNum6Color(a.getColor(R.styleable.SudokuBoardView_num6, Color.parseColor("#00ffff")));
+        setNum7Color(a.getColor(R.styleable.SudokuBoardView_num7, Color.parseColor("#0000ff")));
+        setNum8Color(a.getColor(R.styleable.SudokuBoardView_num8, Color.parseColor("#800080")));
+        setNum9Color(a.getColor(R.styleable.SudokuBoardView_num9, Color.parseColor("#800000")));
         //setNum0Color(a.getColor(R.styleable.SudokuBoardView_backgroundColorSecondary, NO_COLOR));
 
         a.recycle();
@@ -436,6 +437,14 @@ public class SudokuBoardView extends View {
         mSectorLineWidth = (int) (sectorLineWidthInDip * dipScale);
     }
 
+    protected void showNumber() {
+        if (isNumberShowed == false) {
+            isNumberShowed = true;
+        } else {
+            isNumberShowed = false;
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
@@ -543,44 +552,27 @@ public class SudokuBoardView extends View {
 
                         Paint cellValuePaint;
                         switch(value) {
-                            case 1 :
-                                cellValuePaint = num1Color;
-                                break;
-                            case 2 :
-                                cellValuePaint = num2Color;
-                                break;
-                            case 3 :
-                                cellValuePaint = num3Color;
-                                break;
-                            case 4 :
-                                cellValuePaint = num4Color;
-                                break;
-                            case 5 :
-                                cellValuePaint = num5Color;
-                                break;
-                            case 6 :
-                                cellValuePaint = num6Color;
-                                break;
-                            case 7 :
-                                cellValuePaint = num7Color;
-                                break;
-                            case 8 :
-                                cellValuePaint = num8Color;
-                                break;
-                            case 9 :
-                                cellValuePaint = num9Color;
-                                break;
+                            case 1 : cellValuePaint = num1Color; break;
+                            case 2 : cellValuePaint = num2Color; break;
+                            case 3 : cellValuePaint = num3Color; break;
+                            case 4 : cellValuePaint = num4Color; break;
+                            case 5 : cellValuePaint = num5Color; break;
+                            case 6 : cellValuePaint = num6Color; break;
+                            case 7 : cellValuePaint = num7Color; break;
+                            case 8 : cellValuePaint = num8Color; break;
+                            case 9 : cellValuePaint = num9Color; break;
                             default:
                                 cellValuePaint = mCellValueReadonlyPaint;
                         }
-                        canvas.drawText(Integer.toString(value),
-                                cellLeft + mNumberLeft,
-                                cellTop + mNumberTop - numberAscent,
-                                cellValuePaint);
-                        canvas.drawRoundRect(
-                                cellLeft, cellTop,
-                                cellLeft + mCellWidth, cellTop + mCellHeight, mCellWidth, mCellHeight,
-                                cellValuePaint);
+                        //if (isNumberShowed == false)
+                            //canvas.drawText(Integer.toString(value), cellLeft + mNumberLeft, cellTop + mNumberTop - numberAscent, cellValuePaint);
+                        //else
+
+                        canvas.drawRoundRect(cellLeft, cellTop, cellLeft + mCellWidth, cellTop + mCellHeight, mCellWidth, mCellHeight, cellValuePaint);
+                        if (isNumberShowed == false)
+                            canvas.drawText(Integer.toString(value), cellLeft + mNumberLeft, cellTop + mNumberTop - numberAscent, cellValuePaint);
+                        else
+                            canvas.drawText(Integer.toString(value), cellLeft + mNumberLeft, cellTop + mNumberTop - numberAscent, mCellValueReadonlyPaint);
                     }
                 }
             }

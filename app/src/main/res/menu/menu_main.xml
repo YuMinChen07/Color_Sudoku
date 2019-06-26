@@ -23,7 +23,9 @@
         </menu>
         </item>
 
-
+        <item android:id="@+id/show_number"
+            android:title="@string/show_number"
+            app:showAsAction="never" />
 
 </menu>
 

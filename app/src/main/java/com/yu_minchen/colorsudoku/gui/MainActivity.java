@@ -275,6 +275,10 @@ public class MainActivity extends AppCompatActivity {
                 onRecreate(random3);
                 onResume();
                 return true;
+
+            case R.id.show_number:
+                mSudokuBoard.showNumber();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

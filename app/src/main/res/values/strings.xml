@@ -14,6 +14,7 @@
     <string name="im_disable_modes_hint">Please remember that you don\\\'t have to use all input modes. You can disable \t\tany of them in the game settings.\\n\\nYou can also use the keyboard and trackball to control the game. If you \t\twant to enter notes using keyboard, press number with alt or shift.\\n</string>
     <string name="im_numpad_hint">no hint here!</string>
     <string name="restart">Restart</string>
+    <string name="show_number">Show Numbers</string>
     <string name="newgame">New Game</string>
     <string name="well_done">Well Done!</string>
     <string name="congrats">Congratulations, you have solved the puzzle in %s.</string>

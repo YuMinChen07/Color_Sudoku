@@ -53,14 +53,24 @@
     <color name="midnightblue">#191970</color>
     <color name="slategray">#708090</color>
     <color name="brown">#A52A2A</color>
-    <color name="num1">#09ff00</color>
-    <color name="num2">#e3ff00</color>
-    <color name="num3">#ffca01</color>
-    <color name="num4">#e87d0c</color>
-    <color name="num5">#ff0082</color>
-    <color name="num6">#9900ff</color>
-    <color name="num7">#0114ff</color>
-    <color name="num8">#0ca8e8</color>
-    <color name="num9">#00ff9d</color>
+    <color name="oldnum1">#09ff00</color>
+    <color name="oldnum2">#e3ff00</color>
+    <color name="oldnum3">#ffca01</color>
+    <color name="oldnum4">#e87d0c</color>
+    <color name="oldnum5">#ff0082</color>
+    <color name="oldnum6">#9900ff</color>
+    <color name="oldnum7">#0114ff</color>
+    <color name="oldnum8">#0ca8e8</color>
+    <color name="oldnum9">#00ff9d</color>
+
+    <color name="num1">#d98880</color>
+    <color name="num2">#e8124c</color>
+    <color name="num3">#f39c12</color>
+    <color name="num4">#f4d03f</color>
+    <color name="num5">#008000</color>
+    <color name="num6">#00ffff</color>
+    <color name="num7">#0000ff</color>
+    <color name="num8">#800080</color>
+    <color name="num9">#800000</color>
 
 </resources>
